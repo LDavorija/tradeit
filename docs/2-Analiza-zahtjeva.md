@@ -15,8 +15,13 @@ Primjeri koriste temu projekta CrisisMap. Neki namjerno sadrže korisne nedostat
 
 | ID | Opis | Prioritet | Izvor | Kriteriji prihvaćanja |
 | --- | --- | --- | --- | --- |
-| F-001 | [Funkcijski zahtjev/ponašanje sustava] | [Visok/Srednji/Nizak] | [Odobreni zadatak / zahtjev dionika / povratna informacija] | [Opažljivi rezultat] |
-|  |  |  |  |  |
+| F-000 | [Funkcijski zahtjev/ponašanje sustava] | [Visok/Srednji/Nizak] | [Odobreni zadatak / zahtjev dionika / povratna informacija] | [Opažljivi rezultat] |
+| F-001 | Sustav omogućuje korisniku registraciju računa pomoću adrese e-pošte. | Visok | Zahtjev dionika | Korisnik se može registrirati adresom e-pošte |
+| F-002 | Sustav omogućuje oporavak lozinke putem e-pošte. | Srednji | Zahtjev dionika | Korisnik može zatražiti ponovno postavljanje lozinke, primiti poveznicu i uspješno postaviti novu lozinku. |
+| F-003 | Sustav omogućuje korisnicima izradu objave. | Visok | Odobreni zadatak | Korisnik može izraditi objavu koja sadrži sliku, opis i cijenu za predmet koji želi iznajmiti drugima. |
+| F-004 | Sustav omogućuje korisnicima popis tuđih objava | Visok | Odobreni zadatak | Korisnik može vidjeti tuđe objave. |
+| F-005 | Sustav omogućuje filtriranje objava | Visok | Odobreni zadatak | Korisnik može pretražiti dostupne objave. |
+| F-00x | Sustav omogućuje moderatoru odobravanje ili odbijanje objava. | Visok | Zahtjev dionika | Moderator može odobriti ili odbiti objavu koja čeka pregled; korisnik bez moderatorskih ovlasti ne može izvršiti te radnje. |
 
 <details>
 <summary><strong>Izvori zahtjeva i kriteriji prihvaćanja</strong></summary>
