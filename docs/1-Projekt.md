@@ -8,6 +8,12 @@
 
 [Problem, cilj i očekivana korist vlastitim riječima tima.]
 
+Projekt obuhvaća razvoj web-aplikacije koja korisnicima omogućuje iznajmljivanje i unajmljivanje predmeta koje ne koriste često, ali koji drugim osobama mogu biti potrebni za kratkotrajnu upotrebu. Primjeri takvih predmeta uključuju alate, bicikle, opremu za školu te razne kućanske uređaje. Umjesto kupnje predmeta koji će im možda trebati samo jednom ili nekoliko puta, korisnici ga mogu unajmiti od druge osobe po manjoj cijeni. S druge strane, vlasnici predmeta mogu ostvariti dodatnu zaradu iznajmljivanjem stvari koje bi inače većinu vremena stajale neiskorištene.
+
+Cilj projekta je razviti jednostavnu i preglednu web platformu koja povezuje osobe koje žele iznajmiti svoje predmete s osobama koje ih žele privremeno koristiti. Aplikacija nastoji olakšati pronalazak odgovarajućih predmeta, dogovaranje najma i razmjenu informacija između korisnika, uz poticanje učinkovitijeg korištenja postojećih resursa i smanjenje nepotrebne kupnje.
+
+Ciljana skupina korisnika uključuje pojedince koji žele smanjiti troškove povremenog korištenja različitih predmeta, kao i vlasnike koji žele iskoristiti predmete koje posjeduju, a rijetko koriste. Aplikacija je namijenjena svima koji žele jednostavno ponuditi svoje predmete za najam ili pronaći predmet koji im je potreban na ograničeno vrijeme.
+
 <details>
 <summary><strong>Očekivane koristi i potkrepljujući dokazi</strong></summary>
 
@@ -23,7 +29,10 @@
 
 | Skupina korisnika ili dionika | Potreba ili interes relevantan za ovaj projekt |
 | --- | --- |
-|  |  |
+| Vlasnici predmeta | Dodatna pasivna zarada koristeći stvari koje rijetko treba |
+| Iznajmljivač | Jeftiniji pronalazak potrebnih predmeta od kupovine |
+| Regulatorno tijelo / Agencija za zaštitu podataka (Dionik) | Zahtijeva osiguravanje anonimnosti prijavitelja i zaštitu osobnih podataka (npr. usklađenost s GDPR-om). Ovaj dionik ne koristi aplikaciju, ali definira ograničenja sustava. |
+
 
 <details>
 <summary><strong>Korisnici, dionici i neobavezna persona</strong></summary>
@@ -46,16 +55,20 @@ Riječ je o dvjema različitim potrebama, a ne o dvjema izmišljenim biografijam
 
 **Cilj:** Jasno definirati granice sustava — što je obuhvaćeno odobrenim zadatkom, što je svjesno izostavljeno ili odgođeno te o kojim vanjskim uslugama sustav izravno ovisi.
 
-**Uključeno:** [Glavne mogućnosti.]  
-**Izvan opsega ili odgođeno:** [Navedite funkcionalnosti koje su namjerno izostavljene ili prebačene u buduće verzije, uz kratko inženjersko ili vremensko obrazloženje.] 
-**Vanjske ovisnosti:** [Navedite nužne vanjske usluge, API-je, baze podataka ili izvore informacija bez kojih sustav ne može funkcionirati (npr. Google Maps, platni pristupnici, vanjski pružatelj identiteta (OAuth)).]
+**Uključeno:** Objava predmeta za najam te pronalazak objava u svrhu najma tih predmeta. 
+
+**Izvan opsega ili odgođeno:** Dostava i skladištenje predmeta.
+
+**Vanjske ovisnosti:** [Navedite nužne vanjske usluge, API-je, baze podataka ili izvore informacija bez kojih sustav ne može funkcionirati (npr. Google Maps, platni pristupnici, vanjski pružatelj identiteta (OAuth)).] Prijava korisnika uz vanjske servise poput Google (OAuth), Google maps za lakši dogovor najma.
 
 <details>
 <summary><strong>Primjer početne granice projekta</strong></summary>
 
 **Primjer — CrisisMap:**  
 **Uključeno:** Podnošenje prijave kriznog događaja s lokacijom i pregled prijava na karti.  
+
 **Isključeno:** Automatsko angažiranje hitnih službi; prikaz prijave ne odobrava niti pokreće službenu intervenciju.  
+
 **Vanjska ovisnost:** Pružatelj kartografskih usluga omogućuje prikaz karte; aplikacija ostaje odgovorna za vlastite podatke o prijavama.
 
 Ovo je konkretna granica jer razdvaja prikaz informacija od službenog odgovora hitnih službi i određuje koji sustav osigurava kartu. Izuzeće i ovisnost dio su **nastavnog scenarija**, a ne tvrdnja o tome što objavljena aplikacija stvarno implementira; te činjenice određuju odobreni opseg i stvarna aplikacija tima.
