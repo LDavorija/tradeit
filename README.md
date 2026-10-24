@@ -1,51 +1,104 @@
-# Programsko inženjerstvo — FER-UNIZG
+# TradeIt
 
-Dobro došli u središnji repozitorij kolegija **Programsko inženjerstvo** na Fakultetu elektrotehnike i računarstva Sveučilišta u Zagrebu.
+**Najam predmeta i opreme od ljudi u blizini.** TradeIt povezuje vlasnike predmeta s osobama kojima su oni privremeno potrebni te objedinjuje pronalazak, dogovor najma, evidenciju stanja i korisničku podršku.
 
-**Važna napomena:** Ovaj `README.md` **nije** predložak za studentske projekte. Kao polazište za README vlastitog projekta koristite [`README_PREDLOZAK.md`](README_PREDLOZAK.md). Potpune upute za projektnu dokumentaciju — opseg, zahtjeve, obrasce uporabe, arhitekturu, ispitivanje, postavljanje, zaključak i aktivnosti grupe — nalaze se u direktoriju [`docs/`](docs/Home.md). **Napomena:** Sva projektna dokumentacija vodi se isključivo unutar direktorija docs/ u obliku međusobno povezanih Markdown dokumenata.
+| Podatak            | Vrijednost                                                                |
+| ------------------ | ------------------------------------------------------------------------- |
+| Naziv aplikacije   | TradeIt                                                                   |
+| Naziv tima         | Sibirski plavac                                                           |
+| Nastavna grupa     | G03-01                                                                    |
+| GitHub repozitorij | https://github.com/LDavorija/tradeit                                      |
+| Početak čitanja    | [Dokumentacija](docs/Home.md) |
 
-## Svrha
+## Opis aplikacije
 
-Ovaj repozitorij sadrži službenu strukturu dokumentacije, predloške, primjere i smjernice za studentske projekte na kolegiju Programsko inženjerstvo na FER-u. Služi kao glavno mjesto za praćenje napretka i strukture projektnih zadataka te definira praktične standarde za jasnu dokumentaciju, organizirano upravljanje projektom i transparentnost tijekom razvoja.
+Osobi kojoj jednom treba grafički kalkulator, alat ili kamera kupnja može biti nepotrebna, a pronalazak najmodavca zahtijeva dogovor na više mjesta. TradeIt predlaže katalog najma s cijenama i raspoloživosti, dogovorom između korisnika te fotografijama pri preuzimanju i povratu. Očekivana korist je lakša ponovna uporaba predmeta; ušteda vremena, novca ili utjecaj na okoliš još nisu mjereni.
 
-## Verzije i povijest
+**Trenutačno stanje:** ovaj repozitorij sadrži početnu strukturu i dokumentaciju. `backend/src/app.js` je ogledni Node.js HTTP poslužitelj, a frontend build naredba generira samo stranicu „Frontend App”. Ranije izrađen zasebni frontend nije prenesen u ovaj ZIP. Poslovne funkcije, baza, autentikacija, naplata i AI integracije ovdje još nisu implementirani. [Ograničenja ispitivanja](docs/5-Ispitivanje.md#54-poznati-nedostaci-i-ogranicenja-ispitivanja).
 
-Ovaj repozitorij primjenjuje semantičko verzioniranje (engl. Semantic Versioning). Trenutačna je verzija 3.0.  
-Predložak i pripadajuća struktura dokumentacije kontinuirano se razvijaju i unaprjeđuju od 2015. godine.
+Postupak lokalnog pokretanja i plan postavljanja opisani su u [poglavlju 6](docs/6-Postavljanje-instalacija-i-konfiguracija.md).
 
-## Struktura repozitorija
+<a id="deployment"></a>
+## Postavljanje
 
-Repozitorij sadrži predloške dokumentacije, primjere i pomoćne materijale za projekte na kolegiju Programsko inženjerstvo.
+Javna poveznica na integriranu aplikaciju nije dostavljena. GitHub URL vodi na kod, a ne na pokrenutu aplikaciju. Stvarni URL i ograničenja postavljene inačice dodati nakon provjere.
+
+<a id="quick-start"></a>
+## Brzi početak
+
+Za pokretanje **oglednog Node.js poslužitelja** potrebni su Node.js i npm. Iz korijena repozitorija:
+
+```bash
+cd backend
+npm start
+```
+
+Prema kodu poslužitelj koristi port 10000 ili vrijednost `PORT`; `/health` vraća ogledni JSON status. Ova naredba ne pokreće funkcije najma, bazu ni puni frontend. Postupak nije potvrđen kao pokretanje cjelovite aplikacije; [pojedinosti](docs/6-Postavljanje-instalacija-i-konfiguracija.md).
+
+## Tehnologije
+
+| Tehnologija ili alat               | Uloga                                                 | Status i razlog                                                          |
+| ---------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------ |
+| HTML5, CSS, JavaScript             | Zasloni, stilovi, navigacija i lokalne interakcije    | Planirani klijentski dio; raniji dizajn još nije prenesen u ovaj repozitorij              |
+| Node.js i npm                | Izvođenje oglednog poslužitelja i naredbi iz predloška                           | Postojeći npm testovi samo ispisuju poruke; jsdom testovi nisu u ovom ZIP-u       |
+| Python + FastAPI                   | Planirani HTTP API i poslovna pravila                 | Prijedlog za raspravu; API još nije implementiran                        |
+| PostgreSQL                         | Planirana zajednička pohrana i integritet rezervacija | Prijedlog; shema i migracije još nisu primijenjene                       |
+| SQLAlchemy + Alembic               | Planirano preslikavanje modela i migracije            | Uvesti uz prvi vertikalni tijek API-ja                                   |
+| OAuth/OIDC, Google Maps, AI servis | Planirane prijava, lokacija i provjera oglasa         | Vanjske integracije još nisu povezane; pružatelje i troškovnik potvrditi |
+| GitHub + GitHub Actions            | Verzije, pregled promjena i automatizirane provjere   | Repozitorij je naveden; workflow je predložak bez stvarne testne provjere           |
+
+## Struktura
+
+| Lokacija                                       | Namjena                                                                  |
+| ---------------------------------------------- | ------------------------------------------------------------------------ |
+| `docs/`                                        | Službena poglavlja dokumentacije, zadaci, problemi, sastanci i dokazi    |
+| `frontend/package.json`                          | Ogledne build/test naredbe; cjelovit klijentski dio tek treba prenijeti                                               |
+| `frontend/src/pages/`, `frontend/src/components/`, `frontend/src/services/`  | Pripremljeni direktoriji za stranice, komponente i API povezivanje                         |
+| `frontend/src/assets/`, `frontend/public/` | Mjesta za buduće statičke resurse                                          |
+| `backend/src/`                                 | Početni Node.js primjer i direktoriji; predložena Python izvedba još nije dodana |
+| `db/`                                          | Mjesto budućih migracija i testnih podataka    |
+| `tests/`, `frontend/tests/`                    | Početna struktura za buduće provjere; nema dovršenih poslovnih testova                          |
+| `scripts/`, `build/`, `.github/`               | Pomoćne naredbe, izlazi gradnje i CI                                     |
+
+<a id="team-members"></a>
+
+## Članovi tima
+
+Podjela rada preuzeta je iz dostavljenog projektnog dokumenta. R1–R7 povezuju članove s područjima odgovornosti. GitHub profile koji nisu navedeni članovi trebaju dopuniti; pojedinačne izvršene doprinose i sate evidentirati tek nakon rada.
+
+| Član            | Oznaka | Glavna uloga ili doprinos      | Prvi konkretan zadatak                                            |
+| --------------- | ------ | ------------------------------ | ----------------------------------------------------------------- |
+| Adam Winkler    | R1     | Frontend i UI                  | Povezati katalog s budućim API-jem; provjeriti prikaz na mobitelu |
+| Leon Zorko      | R2     | Dokumentacija i koordinacija   | Potvrditi zahtjeve, održavati issues i stvarne zapisnike          |
+| Patrik Šinko    | R3     | Baza podataka                  | Model korisnika, oglasa i rezervacija te početne migracije        |
+| Pavao Knez      | R4     | Autentikacija i AI             | OIDC prijava, serverske ovlasti; zatim AI provjera oglasa         |
+| Viktor Lazić    | R5     | Vanjske usluge                 | Pohrana fotografija i integracija lokacije                        |
+| Lukas Davorija  | R6     | API i integracija              | Katalog, ponuda cijene i zahtjev za najam                         |
+| Matej Miličević | R7     | Deploy, testiranje i fullstack | CI, razvojna okolina i prvo postavljanje                          |
+
+## Doprinos projektu
+
+Za praćenje zadataka navedena je Jira ploča ispod. GitHub sadrži izvorni kod i dokumentaciju. Predloženo je povezivati promjene sa zadacima i provesti pregled drugog člana prije spajanja; stvarni ritam i pravila tim tek treba evidentirati u [pregledu aktivnosti](docs/A-Pregled-aktivnosti-grupe.md).
+
+Poveznica na JIRU: https://trade-it.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=&groupBy=none
+
+<a id="license"></a>
+
+## Licenca
+
+Za izvorni kod aplikacije tim još nije odabrao licencu za javnu ponovnu uporabu; vidi [LICENSE](LICENSE). Prilagođena dokumentacija slijedi licencu predloška **CC BY-NC-SA 4.0**. Ta licenca ne dodjeljuje automatski licencu aplikacijskom kodu. Licence naknadno dodanih fontova, slika i programskih ovisnosti treba zasebno evidentirati; datoteka LICENSE u ovom ZIP-u odnosi se na dokumentacijski predložak.
 
 <a id="ai-usage"></a>
-## Uporaba umjetne inteligencije [![AI Usage: Disclosed](https://img.shields.io/badge/AI%20Usage-Disclosed-blue.svg)](https://www.fer.unizg.hr/_download/repository/Policy%20on%20the%20appropriate%20use%20of%20artificial%20intelligence%20at%20the%20faculty%20of%20electrical%20engineering%20and%20computing%5B1%5D.pdf)
+## Uporaba umjetne inteligencije
 
-Ovaj projekt slijedi FER-ova [pravila o primjerenoj uporabi umjetne inteligencije](https://www.fer.unizg.hr/_download/repository/Policy%20on%20the%20appropriate%20use%20of%20artificial%20intelligence%20at%20the%20faculty%20of%20electrical%20engineering%20and%20computing%5B1%5D.pdf).
+ChatGPT/Codex korišten je za nacrt i doradu dokumentacije te ranije za zaseban prijedlog frontenda. Opseg pomoći, provjere i podaci koje članovi još trebaju potvrditi navedeni su u [Home.md](docs/Home.md#izjava-o-uporabi-umjetne-inteligencije). Neovisan pregled tima još nije evidentiran.
 
-**Transparentnost i korišteni alati:** Jezični model umjetne inteligencije Gemini (3.8 Flash) korišten je kao pomoć pri završnom uređivanju dokumentacije i predložaka repozitorija (`README.md` i direktorij `docs/`) te pri izradi i oblikovanju dokumentacije koda projekta.
+<a id="code-of-conduct-and-support"></a>
 
-**Etika, sigurnost i provjera:** Radi točnosti i sigurnosti podataka, sva dokumentacija izrađena uz pomoć umjetne inteligencije neovisno je pregledana i provjerena prije objave. Provjereno je da sadržaj poštuje povjerljivost korisnika i da ne uvodi neprovjerene pristranosti.
+## Kodeks ponašanja i podrška
 
-## Kodeks ponašanja
+Primjenjuju se pravila timskog rada kolegija i priloženi [kodeks ponašanja](CODE_OF_CONDUCT.md). Timski kontakt za podršku još treba dopuniti; nastavne probleme prijaviti kroz službeni kanal kolegija.
 
-Od studenata se očekuje pridržavanje minimalnih standarda prihvatljivog ponašanja definiranih **Kodeksom ponašanja studenata Fakulteta elektrotehnike i računarstva Sveučilišta u Zagrebu**. Također se očekuje pridržavanje [Etičkog kodeksa IEEE-a](https://www.ieee.org/about/corporate/governance/p7-8.html), koji postavlja visoke standarde integriteta, odgovornog i etičnog profesionalnog ponašanja.
+---
 
-**Očekivanja od tima:**
-
-- jasno definirati kako će se rad raspodijeliti među članovima tima i kako će tim komunicirati;
-- primjenjivati dogovorena pravila i standarde pri rješavanju nesuglasica;
-- svi članovi tima dužni su pridržavati se kodeksa ponašanja.
-
-## Licenca [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-Copyright © 2026 Vlado Sruk
-
-Dokumentacija i materijali u ovom repozitoriju licencirani su licencom **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**. Djelo možete preuzimati, dijeliti i prilagođavati uz navođenje autora, bez komercijalne uporabe i uz objavu izvedenog djela pod istom licencom.
-
-Predložak dokumentacije razvijen je u okviru kolegija Programsko inženjerstvo na FER-u na temelju višegodišnjeg iskustva rada na studentskim projektima. Njegova je svrha isključivo obrazovna: studentima pružiti jasan, strukturiran i povezan okvir za dokumentiranje ključnih aspekata razvoja programskog sustava. Struktura je namjerno moderna i plitka, prilagođena Git/Markdown dokumentaciji i čitanju na ekranu, bez nepotrebno duboke hijerarhije poglavlja. Usklađen s vremenskim okvirom semestra i ciljevima kolegija, predložak je namjerno sažet na inženjerski minimum potreban za razumijevanje i praktičnu primjenu temeljnih principa struke. Stoga ne teži razini opsega i detalja koja se očekuje u dokumentaciji velikih industrijskih sustava.
-
-Predložak služi kao polazište, a ne ograničenje. Timovi ga mogu prilagoditi i proširiti u skladu sa specifičnostima domene, odabranim tehnologijama, složenošću rješenja i interesima članova tima. Svaka nadopuna pritom treba imati jasnu svrhu i doprinositi kvaliteti rješenja, arhitekture, dokumentacije ili verifikacije projekta, a ne pukom povećanju opsega. Obavezni zahtjevi, način rada i ostala pravila studentskog projekta definirani su na službenoj stranici [Projekt - Programsko inženjerstvo](https://www.fer.unizg.hr/predmet/proinz). Ova licenca se odnosi na predložak dokumentacije i pripadajuće nastavne sadržaje, a ne automatski na studentske projekte izrađene njegovom uporabom.
-
-## Citiranje
-
-Ako koristite ili prilagođavate ovaj repozitorij, citirajte ga prema datoteci [`CITATION.cff`](citation.cff). GitHubova naredba **Cite this repository** automatski čita tu datoteku.
+Struktura dokumentacije prilagođena je [predlošku kolegija Programsko inženjerstvo](https://github.com/VladoSruk/Programsko-inzenjerstvo) autora Vlade Sruka. Izvorni citatni podaci nalaze se u [CITATION.cff](CITATION.cff), a prilagodbe i uporaba AI-ja opisane su u [Home.md](docs/Home.md#izjava-o-uporabi-umjetne-inteligencije).

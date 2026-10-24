@@ -2,216 +2,171 @@
 
 **Cilj:** Iz odobrenog opsega projekta izvesti prepoznatljive, prioritetizirane i provjerljive zahtjeve. Zahtjevi se mogu mijenjati; pri završnoj predaji moraju odražavati dogovorenu aplikaciju. Izvori, odluke i poveznice u primjerima kolegija nastavni su scenariji, a ne projektni zapisi.
 
-<details>
-<summary><strong>Održavanje zahtjeva ažurnima</strong></summary>
-
-Primjeri koriste temu projekta CrisisMap. Neki namjerno sadrže korisne nedostatke za raspravu. Izvori, odluke i poveznice na provjere u tim primjerima **nastavni su scenariji**, a ne zapisi rada stvarnog studentskog tima. Zamijenite ih zahtjevima i dokazima svojeg odobrenog projekta. Značajne promjene zabilježite u odjeljku 2.5.
-
-</details>
+**Prioriteti:** Visok — temeljna funkcija ili uvjet ispravnog i sigurnog rada; Srednji — važna funkcija koja olakšava korištenje i održavanje; Nizak — opcionalna funkcija iz projektnog opisa. Naknada platforme i porezni postupak ostaju dio ciljanog opsega, ali njihova poslovna pravila moraju biti potvrđena prije implementacije. Otvorene odluke navedene su u poglavlju 2.4.
 
 ## 2.1 Funkcijski zahtjevi
 
 **Cilj:** Navesti što aplikacija mora omogućiti korisnicima, odakle pojedina mogućnost proizlazi i koji se opažljivi rezultat smatra prihvaćanjem.
 
-| ID | Opis | Prioritet | Izvor | Kriteriji prihvaćanja |
-| --- | --- | --- | --- | --- |
-| F-000 | [Funkcijski zahtjev/ponašanje sustava] | [Visok/Srednji/Nizak] | [Odobreni zadatak / zahtjev dionika / povratna informacija] | [Opažljivi rezultat] |
-| F-001 | Sustav omogućuje korisniku registraciju računa pomoću adrese e-pošte. | Visok | Zahtjev dionika | Korisnik se može registrirati adresom e-pošte |
-| F-002 | Sustav omogućuje oporavak lozinke putem e-pošte. | Srednji | Zahtjev dionika | Korisnik može zatražiti ponovno postavljanje lozinke, primiti poveznicu i uspješno postaviti novu lozinku. |
-| F-003 | Sustav omogućuje korisnicima izradu objave. | Visok | Odobreni zadatak | Korisnik može izraditi objavu koja sadrži sliku, opis i cijenu za predmet koji želi iznajmiti drugima. |
-| F-004 | Sustav omogućuje korisnicima popis tuđih objava | Visok | Odobreni zadatak | Korisnik može vidjeti tuđe objave. |
-| F-005 | Sustav omogućuje filtriranje objava | Visok | Odobreni zadatak | Korisnik može pretražiti dostupne objave. |
-| F-00x | Sustav omogućuje moderatoru odobravanje ili odbijanje objava. | Visok | Zahtjev dionika | Moderator može odobriti ili odbiti objavu koja čeka pregled; korisnik bez moderatorskih ovlasti ne može izvršiti te radnje. |
-
-<details>
-<summary><strong>Izvori zahtjeva i kriteriji prihvaćanja</strong></summary>
-
-Svaki zahtjev treba imati stabilan ID. **Izvor označava odakle zahtjev potječe**, primjerice iz odobrenog projektnog zadatka, zahtjeva dionika ili povratne informacije koja je promijenila zahtjev. Opišite opažljivo ponašanje umjesto naziva zaslona ili programskog okvira. U cijeloj dokumentaciji koristite istu ljestvicu prioriteta. Složenu korisničku interakciju objasnite u odgovarajućem obrascu uporabe umjesto kopiranja cijelog tijeka u ovu tablicu.
-
-**Primjer — funkcijski zahtjevi za aplikaciju CrisisMap:**
-
-Kategorije izvora pokazuju različite načine na koje zahtjev može nastati.
-
-| ID | Opis | Prioritet | Izvor | Kriteriji prihvaćanja |
-| --- | --- | --- | --- | --- |
-| F-001 | Sustav omogućuje korisniku registraciju računa pomoću adrese e-pošte. | Visok | Zahtjev dionika | Korisnik se može registrirati adresom e-pošte, primiti poruku za potvrdu i aktivirati račun slijedeći poveznicu. |
-| F-002 | Sustav omogućuje oporavak lozinke putem e-pošte. | Srednji | Zahtjev dionika | Korisnik može zatražiti ponovno postavljanje lozinke, primiti poveznicu i uspješno postaviti novu lozinku. |
-| F-003 | Sustav prikazuje popis dostupnih resursa povezanih s kriznim događajima. | Visok | Postojeći sustav | Korisnik može pregledati ažurirani popis resursa relevantnih za vrstu kriznog događaja, lokaciju i raspoloživost. |
-| F-004 | Sustav omogućuje korisnicima podnošenje prijave kriznog događaja s lokacijom. | Visok | Dokument sa zahtjevima | Korisnik može podnijeti prijavu s vrstom kriznog događaja, razinom ozbiljnosti i lokacijom te dobiti potvrdu o zaprimanju. Ako odbije pristup geolokaciji preglednika, može lokaciju odabrati ručno.|
-| F-005 | Sustav šalje korisnicima obavijesti o relevantnim promjenama u njihovoj blizini. | Visok | Povratna informacija korisnika | Korisnici dobivaju obavijest unutar jedne minute od relevantne promjene za njihovu lokaciju. |
-| F-006 | Sustav prikazuje dostupne resurse prema lokaciji. | Visok | Analiza dokumentacije | Prikazuje se ažurirani popis resursa prilagođen vrsti kriznog događaja, lokaciji i raspoloživosti. |
-| F-007 | Sustav prikazuje prijave kriznih događaja s lokacijom kao oznake na karti. | Visok | Odobreni zadatak | Prijava s valjanom lokacijom prikazuje se kao oznaka na karti; odabirom oznake korisnik može otvoriti pripadajuću prijavu. |
-| F-008 | Sustav omogućuje moderatoru odobravanje ili odbijanje podnesenih prijava. | Visok | Zahtjev dionika | Moderator može odobriti ili odbiti prijavu koja čeka pregled; korisnik bez moderatorskih ovlasti ne može izvršiti te radnje. |
-
-**Kriteriji prihvaćanja i podrijetlo zahtjeva:** Primjer prikazuje registraciju, oporavak lozinke, resurse, prijavu kriznog događaja i obavijesti te nekoliko vrsta izvora i opažljivih kriterija. Istodobno otvara korisna pitanja: opisuju li F-003 i F-006 istu funkcionalnost resursa? Je li obećanje od jedne minute u F-005 dogovoreno i moguće ispitati? Treba li aplikaciji koja koristi isključivo OAuth uopće F-001 i F-002? Retke koristite kao materijal za analizu; u svojem projektu navedite vlastite zahtjeve. U stvarnom projektu stupac Izvor bilježi odakle su doista potekli njegovi zahtjevi.
-
-**Primjer prilagodbe kada odobreni zadatak koristi OAuth i kartu:** Umjesto kopiranja registracije e-poštom i oporavka lozinke formulirajte relevantni zahtjev za prijavu, primjerice: „F-001: Korisnici se prijavljuju putem odobrenog OAuth pružatelja identiteta; uspješna prijava omogućuje radnje rezervirane za prijavljene korisnike, a odustajanje od prijave ostavlja te radnje nedostupnima.” Zaseban zahtjev za kartu može glasiti: „F-007 : Prijave s lokacijom prikazuju se kao oznake na karti; odabirom oznake otvara se pripadajuća prijava.” Izvor treba biti stvarni odobreni zadatak ili dogovoreni zahtjev dionika. Ova je prilagodba zamjena za neodgovarajuće retke, a ne dodatna tablica koju svaki tim mora ispuniti.
-
-Za složenu interakciju kratak scenarij *Given / When / Then* može pojasniti kriterij. Primjerice: *Given* prijava bez lokacije, *when* građanin je podnese, *then* sustav objašnjava da lokacija nedostaje i ne pohranjuje prijavu. Nemojte jednostavan kriterij ponavljati i u prozi i u Gherkinu niti pisati Gherkin za svaki zahtjev.
-
-</details>
-
+| ID    | Opis                                                                                                                                        | Prioritet | Izvor            | Kriteriji prihvaćanja                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| F-001 | Sustav omogućuje registraciju pri prvoj prijavi, prijavu preko vanjskog pružatelja identiteta i odjavu.                                     | Visok     | Zahtjev dionika  | Uspješna autentikacija povezuje isti vanjski identitet s jednim računom. Neuspješna ili prekinuta prijava ne stvara prijavljenu sesiju. Novi račun dobiva korisničku ulogu; administratorska se ne može samostalno odabrati. Odjava poništava aplikacijsku sesiju.                                                                                                                                                        |
+| F-002 | Ako se uvede rezervni način prijave, korisnik može pristupiti unaprijed povezanom računu i kada vanjski pružatelj identiteta nije dostupan. | Nizak     | Odobreni zadatak | Alternativna prijava koristi provjeren identitet i iste ovlasti kao primarna. Ne dopušta pristup tuđem računu samo na temelju unesene adrese e-pošte. Ako se koriste lokalne lozinke, oporavak koristi vremenski ograničenu jednokratnu poveznicu. Ne postoje zajednički pristupni podaci ni zaobilaženje autentikacije.                                                                                                  |
+| F-003 | Prijavljeni korisnik može izraditi, urediti i arhivirati vlastiti oglas.                                                                    | Visok     | Zahtjev dionika  | Obvezni su naziv, vrsta ponude, kategorija, opis, fotografija fizičkog predmeta, cijena s jedinicom obračuna, lokacija i uvjeti korištenja. Sustav odbija nepotpun unos uz poruku uz odgovarajuće polje. Arhivirani oglas ne prima nove zahtjeve; postojeći najmovi i dogovorena cijena ostaju sačuvani. Izmjena sadržaja obuhvaćenog AI provjerom pokreće novu provjeru.                                                 |
+| F-004 | Korisnik može pregledati katalog objavljenih oglasa i pojedinačni oglas.                                                                    | Visok     | Zahtjev dionika  | Detalji prikazuju opis, fotografije kada su primjenjive, cijenu i jedinicu obračuna, javnu lokaciju, raspoloživost, uvjete te profil ponuditelja. Nacrti, odbijeni i arhivirani oglasi nisu dostupni kroz javni katalog. Osnovni pristup namijenjen je prijavljenim korisnicima; gostujući pristup uređuje F-022.                                                                                                         |
+| F-005 | Sustav omogućuje pretraživanje i filtriranje ponude.                                                                                        | Visok     | Zahtjev dionika  | Pretraga obuhvaća naziv i opis. Filtri uključuju vrstu ponude, kategoriju, lokaciju, cijenu s pripadajućom jedinicom i traženi termin. Rezultati zadovoljavaju sve aktivne filtre. Korisnik može ukloniti filtre, a prazan rezultat ima jasnu poruku.                                                                                                                                                                     |
+| F-006 | Administrator može pregledati sumnjiv oglas, odobriti objavu, zatražiti izmjenu ili ukloniti neprimjeren oglas iz kataloga.                 | Visok     | Zahtjev dionika  | Oglas upućen na ručni pregled nije javno objavljen prije odluke. Odluka ima autora, vrijeme i razlog, a vlasnik vidi ishod. Uklanjanje oglasa čuva povijest postojećih najmova. Uredan oglas koji prođe predviđene provjere ne zahtijeva obvezno prethodno odobrenje administratora.                                                                                                                                      |
+| F-007 | Prijavljeni korisnik može poslati zahtjev za najam tuđeg predmeta                                                                           | Visok     | Zahtjev dionika  | Korisnik odabire termin i vidi izračun prema F-019 te uvjete koje potvrđuje prije slanja. Poslužitelj provjerava oglas, datume i raspoloživost. Vlastiti oglas i nevaljan termin nije moguće rezervirati. Ponovljeno slanje iste radnje ne stvara dodatni zahtjev.                                                                                                                                                        |
+| F-008 | Najmodavac može prihvatiti ili odbiti zahtjev, a oba sudionika mogu pratiti status dogovora.                                                | Visok     | Zahtjev dionika  | Zahtjev se može prihvatiti ili odbiti samo iz stanja čekanja. Pri prihvaćanju ponovno se provjerava raspoloživost. Potvrdom se spremaju sudionici, termin, cijena, uvjeti i vrijeme dogovora. Oba sudionika vide jednak ishod; odbijanje sadrži razlog. Status naplate vodi se odvojeno od statusa dogovora.                                                                                                              |
+| F-009 | Sudionici mogu zabilježiti stanje fizičkog predmeta pri preuzimanju i povratu.                                                              | Visok     | Zahtjev dionika  | Zapis sadrži najmanje jednu fotografiju, opis stanja, autora, vrijeme i fazu primopredaje. Oba sudionika mogu dodati vlastiti zapis i potvrditi ili osporiti stanje. Izvorni dokazi ne prepisuju se naknadnom izmjenom. Najam se završava nakon potvrde povrata obiju strana ili evidentirane odluke administratora u pripadajućem ticketu.                                                                               |
+| F-010 | Sudionik završenog najma može recenzirati drugog sudionika kao najmodavca ili najmoprimca.                                                  | Visok     | Odobreni zadatak | Recenzija ima ocjenu od 1 do 5, tekst, poveznicu na najam i ulogu ocijenjene osobe. Po autoru i najmu postoji najviše jedna recenzija. Nisu dopuštene samorecenzije ni recenzije bez završenog najma. Predmet ili usluga navodi se uz recenziju na profilu; zasebna obvezna recenzija predmeta ne uvodi se.                                                                                                               |
+| F-011 | Korisnik može uređivati vlastiti profil i pregledavati javni profil drugih korisnika.                                                       | Srednji   | Odobreni zadatak | Izmjene dopuštenih profilnih podataka ostaju sačuvane nakon ponovne prijave. Javni profil prikazuje naziv korisnika ili organizacije, objavljene oglase i recenzije s ulogom u najmu. Ne prikazuje privatnu adresu, podatke za prijavu ni privatne razgovore. Korisnik ne može sam promijeniti svoju ulogu u administratora.                                                                                              |
+| F-012 | Sudionici mogu razmjenjivati poruke vezane uz zahtjev ili najam.                                                                            | Visok     | Odobreni zadatak | Poruka je povezana s određenim zahtjevom, pošiljateljem i vremenom te je dostupna drugom sudioniku. Prazna poruka se odbija. Treći korisnik nema pristup razgovoru. Administrator dobiva uvid u relevantnu komunikaciju samo kroz obradu pripadajućeg ticketa.                                                                                                                                                            |
+| F-013 | Korisnik može otvoriti i pratiti ticket zbog problema s najmom u kojem sudjeluje.                                                           | Visok     | Odobreni zadatak | Ticket sadrži identifikator, najam, podnositelja, kategoriju problema, opis, status i povezane dokaze. Sudionici mogu dostaviti svoje očitovanje. Podnositelj vidi odgovore i status; nepovezani korisnik ne može pristupiti ticketu.                                                                                                                                                                                     |
+| F-014 | Administrator može obrađivati tickete i evidentirati obrazložen ishod spora.                                                                | Visok     | Zahtjev dionika  | Administrator pregledava dogovor, relevantne poruke i dokaze primopredaje, traži dopunu te vodi ticket kroz stanja otvoren, u obradi, čeka dopunu, riješen i zatvoren. Odluka sadrži obrazloženje, autora, vrijeme i dopuštenu radnju u sustavu te je vidljiva sudionicima. Pravna ovlast i učinak odluke uređuju se odlukom OD-05; aplikacijska odluka sama po sebi ne označava se pravomoćnom.                          |
+| F-015 | Sustav omogućuje zadavanje lokacije oglasa i povezivanje s Google Mapsom.                                                                   | Visok     | Zahtjev dionika  | Korisnik unosi adresu ili odabire točku na karti te potvrđuje rezultat. Klik na prikazanu lokaciju otvara odgovarajuću lokaciju u Google Mapsu. Odbijeno dopuštenje za lokaciju uređaja ne blokira ručni unos. Javna i privatna preciznost lokacije poštuju AS-03.                                                                                                                                                        |
+| F-016 | Sustav uz pomoć AI servisa provjerava prikladnost sadržaja oglasa i podudaranje fotografije fizičkog predmeta s kategorijom.                | Visok     | Zahtjev dionika  | Pohranjuju se ishod, vrijeme i verzija sadržaja koji je provjeren. Valjan sadržaj može nastaviti prema objavi; neprikladan, neodlučan ili tehnički neprovjeren sadržaj upućuje se na ručni pregled prema F-006. AI provjera ne prikazuje se kao dokaz vlasništva, stvarnog stanja predmeta ili uspješnog izvršenja usluge.                                                                                                |
+| F-017 | Najmodavac može upravljati terminima dostupnosti, a sustav sprječava potvrdu zauzetog termina.                                              | Visok     | Zahtjev dionika  | Najmodavac može dodavati i uklanjati vlastite blokade slobodnih termina. Potvrđeni najam ne može se ukloniti običnom izmjenom kalendara. Zauzet termin nije moguće potvrditi drugom korisniku; odbijanje ili otkazivanje oslobađa termin prema pravilima statusa.                                                                                                                                                         |
+| F-018 | Sustav izračunava cijenu najma i naknadu platforme te vodi evidenciju naplate prema potvrđenom poslovnom modelu.                            | Visok     | Zahtjev dionika  | Prije prihvaćanja prikazuju se cijena korištenja, naknada platforme i ukupan iznos za korisnika. Porezni dio uključuje se nakon razrade F-020, bez dvostrukog uračunavanja. Potvrđeni iznosi ostaju vezani uz dogovor. Naplata, odbijanje, povrat i ponovljena obavijest pružatelja obrađuju se bez dvostrukog terećenja. Depozit se ne pretpostavlja dok nije izričito dogovoren. Pravila i način naplate ovise o OD-02. |
+| F-019 | Sustav podržava obračun, evidenciju i postupak uplate poreza na najam koji platforma preuzima prema potvrđenim poslovnim pravilima.         | Visok     | Zahtjev dionika  | Nakon potvrde OD-04 svaki obuhvaćeni najam ima osnovicu, primijenjeno pravilo, iznos, odgovornu stranu, status postupka i referencu dokaza uplate. Neuspjela ili nepotvrđena uplata ne označava se izvršenom. Ispravci i povrati ostavljaju trag. Prije razvoja obračuna moraju postojati odobrena pravila i očekivani rezultati provjere; Word ne određuje stopu, obveznika ni konkretan postupak.                       |
+| F-020 | Ako se uvede gostujući pristup, posjetitelj može pregledavati javnu ponudu bez registracije.                                                | Nizak     | Odobreni zadatak | Gost može pregledavati javni katalog, koristiti filtre i otvoriti javni dio oglasa. Objavljivanje, slanje zahtjeva, poruke, recenzije i ticketi zahtijevaju prijavu. Gost ne dobiva zajednički korisnički račun ni pristup privatnim podacima.                                                                                                                                                                            |
+| F-021 | Ako se uvede chatbot, korisnik može dobiti pomoć za korištenje aplikacije.                                                                  | Nizak     | Odobreni zadatak | Chatbot odgovara iz odobrenih uputa o radu aplikacije i omogućuje prijelaz na podršku. Ne potvrđuje najam, ne provodi naplatu i ne odlučuje o ticketima. Ne dohvaća tuđe privatne podatke. Ako ne može pouzdano odgovoriti ili servis nije dostupan, to jasno navodi.                                                                                                                                                     |
+| F-022 | Sudionici mogu otkazati zahtjev ili najam prema pravilima otkazivanja.                                                                      | Visok     | Zahtjev dionika  | Najmoprimac može povući zahtjev koji još čeka prihvaćanje. Za potvrđeni najam sustav prije otkazivanja prikazuje dopuštenost, naknadu i povrat prema OD-02. Otkazivanje bilježi autora, vrijeme i razlog te ažurira raspoloživost. Otkazani dogovor ostaje u povijesti.                                                                                                                                                   |
+| F-023 | Korisnik ima pregled vlastitih oglasa, poslanih i primljenih zahtjeva, najmova i ticketa.                                                   | Visok     | Zahtjev dionika  | Pregled razlikuje ulogu najmodavca i najmoprimca te omogućuje filtriranje po statusu. Svaka stavka otvara pripadajuće detalje, dogovor i dopuštene radnje. Prikaz ne uključuje tuđe privatne zapise. Povijest ostaje dostupna nakon završetka najma ili arhiviranja oglasa.                                                                                                                                               |
+| F-024 | Sustav prikazuje obavijesti o važnim događajima u dogovoru i podršci.                                                                       | Srednji   | Zahtjev dionika  | Nova poruka, zahtjev, prihvaćanje, odbijanje, otkazivanje, odgovor na ticket i odluka o oglasu stvaraju obavijest odgovarajućem korisniku. Obavijest vodi na dostupan zapis i može se označiti pročitanom. Ponovljena obrada istog događaja ne stvara duplikat. Dovoljne su obavijesti unutar aplikacije.                                                                                                                 |
 
 ## 2.2 Nefunkcijski zahtjevi
 
-**Cilj:** Odrediti važna svojstva kvalitete i uvjete rada odobrene aplikacije na način koji tim može razumno provjeriti.
+Nefunkcijski zahtjevi određuju kvalitetu i ograničenja izvedbe. Brojčane vrijednosti u NF-04, NF-06 i NF-08 predloženi su kriteriji za prihvat projekta i potvrđuju se s timom; nisu izmjereni rezultati ni ugovorena razina usluge.
+Oznaka **P** u stupcu Izvor označava taj projektni opis, **R** razradu potrebnu za njegovu izvedbu, a **K** ranije zadani korisnički zahtjev za engleskim sučeljem.
 
-| ID | Opis | Prioritet | Izvor | Način provjere |
-| --- | --- | --- | --- | --- |
-| NF-01 | [Konkretan zahtjev (npr. odziv, sigurnost, pristupačnost)] | Visok / Srednji / Nizak | [Sigurnost / Uputa / SLA] | [Mjerenje / Testni scenarij / Pregled] |
-|  |  |  |  |  |
-
-<details>
-<summary><strong>Nefunkcijski zahtjevi za analizu</strong></summary>
-
-Relevantna svojstva mogu se odnositi na uporabljivost, pristupačnost, sigurnost, performanse ili pouzdanost. Odaberite svojstva specifična za projekt i opišite kako ih je moguće provjeriti. Zahtjev navodi što se očekuje; stvarna opažanja i dokazi pripadaju rezultatima ispitivanja, a ne drugom stupcu s rezultatima u ovoj tablici.
-
-**Primjer — nefunkcijski zahtjevi za aplikaciju CrisisMap:**
-
-| ID | Opis | Prioritet | Izvor |
-| --- | --- | --- | --- |
-| NF-1.1 | Sustav mora podržati 1.000 istodobnih korisnika uz vrijeme odziva kraće od 1 s. | Visok | SLA | Opteretiti sustav zadanim brojem istodobnih korisnika i izmjeriti vrijeme odziva. |
-| NF-1.2 | Svi osjetljivi podaci moraju biti šifrirani algoritmom AES-256. | Visok | Sigurnosna politika | Pregledati način pohrane i konfiguraciju šifriranja za podatke na koje se zahtjev odnosi. |
-| NF-1.3 | Korisničko sučelje mora podržavati engleski i španjolski jezik. | Srednji | Povratna informacija dionika | Pregledati reprezentativne korisničke tijekove u oba jezika. |
-| NF-1.4 | Dostupnost sustava mora iznositi najmanje 99,5 % mjesečno. | Visok | SLA | Izračunati mjesečnu dostupnost iz zapisa sustava za nadzor, ako takvi podaci postoje.|
-| NF-3.1.7 | Sustav treba imati odgovarajuću dokumentaciju. | Visok | Pravila dokumentiranja | Pregledati zahtijevane dokumentaciju prema obavezama.|
-| NF-3.1.7.1 | Kod sustava treba biti dokumentiran prema „Code Conventions for the Java Programming Language”. | Visok | Pravila dokumentiranja | Pregledati kod. |
-| NF-3.1.7.2 | Sustav treba biti opisan projektnim dokumentom/SRS-om. | Visok | Pravila dokumentiranja | Pregledati strukturu dokumenta  |
-| NF-3.1.7.3 | Sustav treba imati „Operativni priručnik” koji opisuje pravilnu uporabu. | Visok | Pravila dokumentiranja | Pregledati postoji li priručnik i mogu li se prema njemu izvršiti opisane radnje. |
-| NF-3.1.7.4 | Sustav treba imati „Plan implementacije” za pravilno postavljanje. | Visok | Smjernice za postavljanje | Pregledati odgovara li opisani postupak stvarnom postupku postavljanja.|
-
-**Provjerljivost i opseg:** Primjer uvodi performanse, sigurnost, lokalizaciju, dostupnost i dokumentaciju, uključujući hijerarhijski ID zahtjeva. Navedeni izvori primjeri su podrijetla zahtjeva, a ne dokaz da za studentski projekt stvarno postoji SLA ili sigurnosna politika. Vrijednosti poput 1.000 korisnika, 99,5 % mjesečne dostupnosti i AES-256 moraju imati odobren izvor i izvediv način provjere prije nego što postanu zahtjevi tima. Skup zahtjeva o dokumentaciji ilustrira razlaganje zahtjeva, ali zahtjevi za izradu *ove dokumentacije kolegija* u pravilu pripadaju uputama zadatka, a ne zahtjevima kvalitete web-aplikacije.
-
-**Primjer prilagodbe:** Ako je pristupačnost zahtjevana za  projekt, projektno specifičan zahtjev može glasiti: „NF-01: Sve obavezne radnje u obrascu za podnošenje prijave moguće je izvršiti samo tipkovnicom, uz vidljiv fokus na aktivnoj kontroli.” Provjera: navigirati kroz obrazac bez pokazivačkog uređaja, odabrati ili unijeti lokaciju, poslati prijavu i provjeriti može li se pročitati rezultat. To je provjerljivo svojstvo kvalitete, a ne dodatna funkcionalnost koju svaki projekt mora implementirati.
-
-</details>
+| ID    | Opis                                                                                                                            | Prioritet | Izvor                                                      | Način provjere                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| NF-01 | Autorizacija se provjerava na poslužitelju za svaki zaštićeni zahtjev prema identitetu, ulozi i odnosu prema resursu.           | Visok     | P — korisnik i administrator; R — zaštita resursa          | Za oglas, najam, razgovor, ticket i poslovni profil provjeriti neprijavljenog korisnika, ovlaštenog korisnika, nepovezanog korisnika i administratora. Nedopušteni pozivi odbijaju se i ne mijenjaju podatke, neovisno o prikazu gumba u sučelju.                                                                                                                                                                                                        |
+| NF-02 | Privatni podaci dostupni su samo sudionicima i ovlaštenoj podršci u opsegu potrebnom za obradu konkretnog slučaja.              | Visok     | P — fotografije, lokacija i ticketi; R — privatnost        | Provjeriti API i izravne adrese fotografija za treći račun. Precizna privatna lokacija, poruke, dokazi i financijski podaci ne smiju biti u javnim odgovorima, obavijestima za druge korisnike ni javnim zapisnicima. Rokovi čuvanja određuju se kroz OD-06.                                                                                                                                                                                             |
+| NF-03 | Promjene rezervacija, dogovorenih iznosa i statusa moraju očuvati cjelovitost podataka i pri istodobnim zahtjevima.             | Visok     | R — F-008, F-017, F-019 i F-024                            | Istodobno potvrditi dva preklapajuća zahtjeva za isti nedjeljivi resurs: najviše jedan smije uspjeti. Ponoviti isti zahtjev i obavijest o plaćanju: mora ostati jedan poslovni učinak. Simulirati grešku usred promjene: ne smije ostati djelomično potvrđen dogovor.                                                                                                                                                                                    |
+| NF-04 | Sučelje je prilagodljivo zaslonima širine 360, 768 i 1440 CSS piksela.                                                          | Srednji   | R — uporaba na mobitelu i računalu                         | Proći pretragu, objavu, dogovor, primopredaju i ticket na svakoj širini. Kontrole i poruke ostaju čitljive, glavne radnje dostupne, a cijela stranica nema neželjeno vodoravno pomicanje.                                                                                                                                                                                                                                                                |
+| NF-05 | Glavni tijekovi dostupni su tipkovnicom i imaju razumljive oznake i poruke pogreške.                                            | Visok     | P — jednostavnost korištenja; R — pristupačnost            | Proći prijavu, oglas, zahtjev i ticket tipkama Tab, Shift+Tab, Enter i Escape. Fokus je vidljiv, redoslijed smislen, polja imaju povezane oznake, a status nije izražen samo bojom. Nakon zatvaranja dijaloga fokus se vraća na odgovarajuću kontrolu.                                                                                                                                                                                                   |
+| NF-06 | Poslužitelj provjerava stvarni sadržaj i veličinu učitanih slika; predloženi formati su JPEG, PNG i WebP, do 5 MiB po datoteci. | Visok     | P — fotografije oglasa i primopredaje; R — sigurna pohrana | Provjeriti valjanu sliku, lažnu ekstenziju, nečitljiv sadržaj i datoteku iznad granice. Nevaljane datoteke odbijaju se prije objave. Slike ne zadržavaju javno dostupne lokacijske metapodatke. Upload ograničava broj datoteka po zahtjevu i ukupnu kvotu definiranu u konfiguraciji.                                                                                                                                                                   |
+| NF-07 | Aplikacija štiti prijavu, sesije, promet i pristupne tajne.                                                                     | Visok     | P — vanjska autentikacija; R — sigurnost                   | Provjeriti HTTPS, validaciju odgovora pružatelja identiteta, istek i poništavanje sesije te zaštitu od krivotvorenih zahtjeva prema korištenom mehanizmu sesije. Ako se koriste cookieji sesije, moraju imati HttpOnly, Secure i odgovarajući SameSite. Poslužiteljske tajne nisu u repozitoriju ni klijentskom paketu; javni ključevi za kartu imaju namjenska ograničenja. Alternativna prijava ima sigurno pohranjene lozinke i ograničenje pokušaja. |
+| NF-08 | API kataloga treba postići p95 vremena odgovora do 2 sekunde pri 1.000 aktivnih oglasa i 20 istodobnih klijenata.               | Srednji   | R — predloženi cilj odziva                                 | Provesti petominutno mjerenje nakon zagrijavanja, s pregledom i pretragom kataloga, bez prijenosa slika i poziva vanjskih servisa. Zabilježiti okolinu, skup podataka, p95 i broj pogrešaka. Cilj se prihvaća uz najviše 1 % poslužiteljskih pogrešaka; eventualna izmjena cilja bilježi se prije završnog mjerenja.                                                                                                                                     |
+| NF-09 | Prekid veze i nedostupnost vanjskog servisa imaju jasno stanje i siguran način ponovnog pokušaja.                               | Visok     | P — OAuth, Google Maps i AI; R — otpornost                 | Simulirati timeout i odbijeni odgovor svakog integriranog servisa. Neuspjela prijava ne otvara sesiju, neprovjeren oglas ide na ručni pregled, a nepotvrđeno plaćanje ne prikazuje se plaćenim. Prekid karte ne briše spremljenu adresu. Ponovni pokušaj ne duplicira najam, dokaz ni naplatu.                                                                                                                                                           |
+| NF-10 | Poslovni podaci i mediji trajno se pohranjuju te imaju dokumentiran i provjeren postupak obnove.                                | Visok     | P — evidencija dogovora i dokaza; R — oporavak             | Nakon ponovnog pokretanja dohvatiti isti dogovor, poruke i fotografije. Sigurnosnu kopiju baze i pripadajućih medija obnoviti u odvojeno okruženje te provjeriti njihove veze. Učestalost kopiranja, dopušten gubitak podataka i vrijeme obnove potvrđuju se kroz OD-06.                                                                                                                                                                                 |
+| NF-11 | Korisničko sučelje i nazivlje aplikacijskog koda koriste engleski jezik; projektna dokumentacija vodi se na hrvatskom.          | Srednji   | K — engleski frontend                                      | Pregledati navigaciju, obrasce, statuse, poruke pogreške, obavijesti i pomoć. Nazivi datoteka, funkcija i varijabli u novom aplikacijskom kodu dosljedno koriste engleski. Korisnički uneseni sadržaj ne mora biti na engleskom i ne prevodi se automatski.                                                                                                                                                                                              |
+| NF-12 | Važne poslovne i administratorske radnje imaju revizijski trag koji se ne može uređivati kroz korisničko sučelje.               | Visok     | P — rješavanje sporova; R — sljedivost                     | Za promjenu statusa dogovora, financijsku radnju, primopredaju i odluku o ticketu pronaći autora ili sistemski izvor, vrijeme, povezani zapis i promjenu. Ispravak dodaje novi zapis. Dnevnik ne sprema lozinke, tokene ni nepotrebne privatne sadržaje.                                                                                                                                                                                                 |
+| NF-13 | Sustav je organiziran tako da članovi tima mogu razvijati i povezivati module te ponovljivo pokrenuti aplikaciju.               | Srednji   | P — podjela rada sedam studenata; R — održavanje           | Iz čiste kopije repozitorija slijediti dokumentirane korake, zadati konfiguraciju prema predlošku bez tajni i primijeniti migracije baze. Moduli imaju opisane API ugovore, a automatizirane provjere obuhvaćaju barem ovlasti i potvrđivanje termina.                                                                                                                                                                                                   |
+| NF-14 | Glavni tijekovi rade u preglednicima Chrome, Edge i Firefox u stabilnim inačicama zabilježenima pri ispitivanju.                | Srednji   | R — kompatibilnost web-aplikacije                          | U svakom pregledniku provjeriti prijavu, pregled oglasa, slanje zahtjeva, učitavanje fotografije i ticket. U zapisniku navesti točnu inačicu preglednika i operacijski sustav.                                                                                                                                                                                                                                                                           |
 
 ## 2.3 Dionici i akteri
 
-**Cilj:** Utvrditi uloge koje utječu na zahtjeve i razlikovati dionike od aktera koji komuniciraju s aplikacijom.
+Sustav ima dvije aplikacijske uloge: **korisnik** i **administrator**. Najmodavac i najmoprimac označavaju odnos korisnika prema konkretnom najmu; isti račun može imati oba odnosa u različitim najmovima. Gost postoji samo ako se uključi F-020.
 
-| ID uloge ili aktera | Odnos prema sustavu | Relevantni zahtjevi |
-| --- | --- | --- |
-|  |  |  |
+| ID uloge ili aktera                       | Odnos prema sustavu                                                                                   | Relevantni zahtjevi                                                                                                   |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| A-01 Korisnik kao najmoprimac             | Pronalazi ponudu, šalje zahtjev, sudjeluje u dogovoru, potvrđuje povrat predmeta i daje recenziju     | F-001, F-002, F-004, F-005, F-007, F-008, F-009, F-010, F-011, F-012, F-013, F-015, F-018, F-022, F-023, F-024        |
+| A-02 Korisnik kao najmodavac              | Objavljuje ponudu, upravlja dostupnošću, odlučuje o zahtjevima i sudjeluje u primopredaji predmeta    | F-001, F-002, F-003, F-007, F-008, F-009, F-010, F-011, F-012, F-013, F-015, F-016, F-017, F-018, F-022, F-023, F-024 |
+| A-03 Administrator                        | Pregledava izdvojene oglase i obrađuje tickete; pristupa samo podacima potrebnima za ovlaštenu radnju | F-006, F-014, F-016, NF-01, NF-02, NF-12                                                                              |
+| A-04 Pružatelj identiteta                 | Vanjski sustav koji potvrđuje identitet pri prijavi                                                   | F-001, F-002, NF-07, NF-09                                                                                            |
+| A-05 Google Maps                          | Vanjski sustav za odabir, provjeru i prikaz lokacije                                                  | F-015, NF-02, NF-09                                                                                                   |
+| A-06 AI servis                            | Vanjski sustav za provjeru sadržaja; opcionalno i pomoć chatbotu                                      | F-016, F-021, NF-02, NF-09                                                                                            |
+| A-08 Gost                                 | Opcionalni posjetitelj s pristupom isključivo javnim podacima                                         | F-020, NF-01, NF-02                                                                                                   |
+| A-09 Pružatelj platnih usluga             | Vanjska ovisnost ako se odabere integrirana naplata; konkretni pružatelj još nije određen             | F-018, F-022, NF-03, NF-09                                                                                            |
+| D-01 Razvojni tim i nastavno osoblje      | Razrađuju, pregledavaju i vrednuju zahtjeve i izvedbu projekta                                        | Svi zahtjevi i otvorene odluke                                                                                        |
+| D-02 Operater platforme i stručna podrška | Određuju model naknade, porezni postupak, uvjete korištenja i postupanje u sporovima                  | F-014, F-018, F-019; OD-01, OD-02, OD-04, OD-05, OD-06                                                                |
 
-<details>
-<summary><strong>Akteri i povezani zahtjevi</strong></summary>
+**Početna podjela odgovornosti:**
 
-**Primjer — akteri aplikacije CrisisMap:**
+| Član tima       | Područje odgovornosti                    | Povezanost s analizom zahtjeva                                                     |
+| --------------- | ---------------------------------------- | ---------------------------------------------------------------------------------- |
+| Adam Winkler    | Frontend i UI dizajn                     | Prikaz oglasa, obrasci, korisnički pregledi, pristupačnost i dosljednost sučelja   |
+| Leon Zorko      | Dokumentacija                            | Održavanje zahtjeva, otvorenih odluka, sljedivosti i zapisa pregleda               |
+| Patrik Šinko    | Organizacija i povezivanje baze podataka | Model korisnika, oglasa, najmova, dokaza, recenzija i ticketa; integritet podataka |
+| Pavao Knez      | Autentikacija i AI integracija           | F-001, F-002 i F-016; opcionalno F-023                                             |
+| Viktor Lazić    | API povezivanje s vanjskim uslugama      | Google Maps i druge potvrđene vanjske integracije                                  |
+| Lukas Davorija  | Povezivanje frontenda i backenda         | API ugovori i povezivanje korisničkih tijekova s poslovnom logikom                 |
+| Matej Miličević | Deploy i fullstack                       | Okruženja, konfiguracija, isporuka aplikacije i podrška integraciji                |
 
-| ID aktera | Uloga | Obuhvaćeni funkcijski zahtjevi |
-| --- | --- | --- |
-| A-01 | Koordinator pomoći | F-003: Pregled resursa; F-004: Podnošenje prijave kriznog događaja. |
-| A-02 | Građanin | F-001: Izrada računa; F-005: Primanje obavijesti. |
-| A-03 | Administrator sustava | NF-1.2: Provođenje sigurnosnih pravila; upravljanje korisnicima. |
-| A-04 | Posjetitelj | F-007: Pregled prijava na karti. |
-| A-05 | Moderator | F-008: Odobravanje ili odbijanje prijava. |
-
-**Odgovornosti aktera:** Uloga aktera treba biti povezana s interakcijom, a ne samo s nazivom. Provjerite podnosi li koordinator pomoći u odobrenom zadatku doista prijave kriznih događaja. Poveznica administratora s NF-1.2 navodi sigurnosni aspekt, ali sama po sebi ne opisuje obrazac uporabe; navedite stvarnu radnju administratora ili izostavite ulogu ako je nema. Nastavnici zainteresirani za rezultat mogu biti dionici, a da nisu akteri aplikacije. Tablica je polazište za razmišljanje, a ne potvrđen opis ovlasti u CrisisMapu.
-
-</details>
+Podjela označava područja rada, a ne dokaz dovršenih doprinosa. Financijske integracije dodjeljuju se nakon razrade poslovnih pravila.
 
 ---
 
 ## 2.4 Ograničenja i pretpostavke
 
-**Cilj:** Zabilježiti projektno specifične granice i pretpostavke koje utječu na zahtjeve ili oblikovanje, zajedno s njihovim izvorom i praktičnom posljedicom. Ovo je njihovo mjerodavno mjesto u dokumentaciji.
+| ID    | Tip          | Opis ograničenja ili pretpostavke                                                                                                                  | Izvor                                                                | Inženjerska posljedica / Provjera                                                                                                                                    |
+| ----- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C-01  | Ograničenje  | Projektna dokumentacija prati dostavljenu strukturu FER predloška.                                                                                 | Dostavljeni predložak                                                | Zadržavaju se nazivi poglavlja i tablični prikazi; sadržaj je prilagođen TradeItu.                                                                                   |
+| C-02  | Ograničenje  | Tim ima sedam članova s početnom podjelom rada utvrđenom u projektnom opisu.                                                                       | P — očekivani opseg i podjela rada                                   | Dogovoriti podatkovni model i API ugovore prije paralelnog povezivanja modula; doprinose voditi u projektnim zadacima.                                               |
+| C-03  | Ograničenje  | Dvije osnovne aplikacijske uloge su korisnik i administrator.                                                                                      | P — dvije persone                                                    | Najmodavac i najmoprimac označavaju odnos korisnika prema pojedinom najmu i ne daju administratorske ovlasti.                                                        |
+| C-04  | Ograničenje  | Opis projekta predviđa vanjsku autentikaciju, Google Maps i AI provjeru.                                                                           | P — integracije                                                      | Računi, konfiguracija, dopuštenja i troškovni limiti moraju biti dostupni za odabrane servise; obraditi njihove prekide prema NF-09.                                 |
+| C-05  | Ograničenje  | Rezervna prijava, gostujući pristup i chatbot navedeni su kao dodatne mogućnosti.                                                                  | P — dodatne funkcije ako vrijeme i potreba dopuštaju                 | F-002, F-020 i F-021 mogu se izostaviti iz početne isporuke uz zabilježenu odluku; nisu preduvjet osnovnog tijeka najma.                                             |
+| C-06  | Ograničenje  | Projektni opis ne određuje tehnološki stog, pružatelja identiteta ni pružatelja naplate.                                                           | P — opseg dostavljenog opisa                                         | Konačni odabir i obrazloženje vode se u arhitekturnoj dokumentaciji. Google Maps ne podrazumijeva automatski Google kao pružatelja prijave.                          |
+| AS-01 | Pretpostavka | Jedan oglas fizičkog predmeta predstavlja jednu nedjeljivu jedinicu za najam.                                                                      | R — početni model raspoloživosti                                     | Potvrđeni termini tog oglasa ne smiju se preklapati. Količinski najam više istih jedinica zahtijeva naknadno proširenje modela.                                      |
+| AS-02 | Pretpostavka | Početni model koristi EUR; fizički predmeti iznajmljuju se po danu, s uključenim datumom preuzimanja i isključenim datumom povrata.                | R — dosljedan izračun                                                | Datum povrata mora biti nakon datuma preuzimanja. Cijena i raspoloživost koriste istu granicu intervala. Tim potvrđuje pravilo prije izrade obračuna.                |
+| AS-03 | Pretpostavka | Javni oglas prikazuje približnu lokaciju, a točna privatna lokacija postaje dostupna potvrđenim sudionicima i ovlaštenoj podršci kada je potrebna. | R — zaštita privatnosti                                              | Jednako ograničenje primijeniti na tekst adrese, koordinate, kartu, poveznice i metapodatke fotografija. Korisnik može izričito odabrati javnu lokaciju preuzimanja. |
+| AS-04 | Pretpostavka | Početni model recenzija ima jednu ocjenu drugog sudionika po najmu, uz naveden predmet najma.                                                      | P — prijedlog povezivanja recenzije i predmeta; R — odabrana razrada | Recenzije se prikazuju na profilu s ulogom najmodavca ili najmoprimca. Tim potvrđuje ovaj odabir umjesto odvojenog obveznog ocjenjivanja osobe i predmeta.           |
+| AS-05 | Pretpostavka | AI provjera pomaže objavi, a nejasni i neuspjeli rezultati upućuju se administratoru.                                                              | R — izvedba AI provjere                                              | Moderacija mora podržati ručni pregled i razlog odluke. Promjena provjerenog sadržaja poništava prethodno odobrenje te verzije sadržaja.                             |
 
-| ID | Tip | Opis ograničenja ili pretpostavke | Izvor | Inženjerska posljedica / Provjera |
-| --- | --- | --- | --- | --- |
-| C-01 | Ograničenje | [Fiksni tehnički ili procesni uvjet] | [Zadatak / Pravila] | [Utjecaj na arhitekturu i oblikovanje] |
-| AS-01 | Pretpostavka | [Očekivani uvjet, npr. o podacima ili okolini] | [Procjena tima] | [Kako i kada će se provjeriti valjanost] |
-|  |  |  |  |  |
-<details>
-<summary><strong>Ograničenja nasuprot pretpostavkama</strong></summary>
+**Otvorene poslovne odluke:**
 
-Ograničenje je uvjet koji tim mora poštovati; pretpostavka je uvjet na koji se tim oslanja i koji treba ponovno provjeravati.
+| ID    | Odluka koju treba donijeti                                                                                   | Povezani zahtjevi          | Uvjet za zatvaranje odluke                                                                                                                                                                                                |
+| ----- | ------------------------------------------------------------------------------------------------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OD-01 | Koje osobe mogu sklapati dogovor i koji su podaci korisničkog profila obvezni?                               | F-001, F-011               | Tim i odgovorna stručna osoba potvrđuju uvjete korištenja, potrebne podatke i način provjere ispunjavanja uvjeta za sklapanje dogovora. Sama prijava potvrđuje identitet računa, a ne automatski ispunjavanje tih uvjeta. |
+| OD-02 | Kako se određuju naknada platforme, trenutak naplate, eventualni depozit, otkazivanje i povrati?             | F-007, F-008, F-018, F-022 | Postoji odobrena tablica poslovnih pravila, odabran način naplate i skup očekivanih izračuna. Određeno je kada naplata utječe na potvrdu i oslobađanje termina.                                                           |
+| OD-04 | Kako platforma preuzima porezni postupak naveden u konceptu?                                                 | F-018, F-019               | Nadležna stručna osoba potvrđuje obveznika, osnovicu, pravilo izračuna, rokove, prijavu, uplatu i ispravke. Dok to nije potvrđeno, razvoj ne smije predstavljati simulaciju kao stvarno podmirenu obvezu.                 |
+| OD-05 | Tko smije rješavati sporove, koje radnje može odrediti i kakav učinak ima odluka?                            | F-009, F-014, F-022        | Potvrđeni su opseg ovlasti administratora, postupak prigovora, dopuštene promjene u sustavu i način priopćavanja ishoda. Pravna uloga opisana u konceptu nije unaprijed potvrđena činjenica.                              |
+| OD-06 | Koliko se dugo čuvaju računi, dogovori, komunikacija, dokazi i financijska evidencija te kako se obnavljaju? | NF-02, NF-10, NF-12        | Određeni su rokovi i pravila brisanja ili anonimizacije, postupanje s otvorenim sporovima, raspored kopija i ciljevi obnove.                                                                                              |
 
-**Primjer — projektni kontekst CrisisMapa:**
-
-| ID | Ograničenje ili pretpostavka | Izvor | Posljedica ili način provjere |
-| --- | --- | --- | --- |
-| C-01 | Odobreni zadatak zahtijeva OAuth prijavu u sustav za uređivanje vlastitih prijava korisnika. | Odobreni zadatak  | Zaštićeno uređivanje projektirati oko odabranog pružatelja identiteta; provjeriti autorizirane i neautorizirane zahtjeve. |
-| AS-01 | Prijave koje se prikazuju na karti imaju uporabive koordinate. | Pretpostavka o podacima  | Pregledati ogledne i uvezene prijave; planirati prikaz prijava bez valjanih koordinata. |
-
-**Ograničenje nasuprot pretpostavci:** C-01 navodi obvezujuću odluku i njezin arhitekturni učinak; AS-01 je moguće provjeriti i može se pokazati netočnim. Nemojte kopirati C-01 ako OAuth nije dio stvarnog odobrenog zadatka. Projektni odgovor objasnite u arhitekturi bez prepisivanja ove tablice.
-
-</details>
-
----
+Dok su OD-02 i OD-04 otvorene, mogu se razvijati sučelja i jasno označene testne simulacije. Takva izvedba ne ispunjava zahtjev stvarne naplate ili porezne uplate i ne znači da su F-018 i F-019 uklonjeni iz opsega.
 
 ## 2.5 Značajne promjene zahtjeva
 
-**Cilj:** Sačuvati razlog promjena koje mijenjaju dogovoreni opseg, prioritet ili kriterije prihvaćanja, uz istodobno održavanje prethodnih zahtjeva ažurnima.
+ID-jevi u sljedećoj tablici odnose se na aktualni popis zahtjeva. Prijašnje oznake zasebno su prikazane u pregledu promjena oznaka ispod tablice.
 
 | Datum | ID zahtjeva | Promjena i razlog | Dogovoreno s / dokaz |
-| --- | --- | --- | --- |
-|  |  |  |  |
-
-<details>
-<summary><strong>Primjer značajne promjene</strong></summary>
-
-**Primjer scenarija — odluka tijekom pregleda CrisisMapa:**
-
-| Datum | ID zahtjeva | Promjena i razlog | Dogovoreno s / dokaz |
-| --- | --- | --- | --- |
-| [Datum pregleda] | F-004, NF-01 | Dodati ručni odabir lokacije kada korisnik odbije geolokaciju preglednika; bez toga građanin ne može podnijeti prijavu kriznog događaja s lokacijom. | [Poveznica na stvarnu bilješku pregleda ili zadatak tima] |
-
-**Razlog promjene:** Zapis navodi zahvaćene stavke i objašnjava razlog iz perspektive korisnika, a zatim upućuje na dokaz odluke.  Nakon stvarne odluke ažurirajte trenutačne zahtjeve; stilska izmjena teksta ne zahtijeva zapis u dnevniku promjena. Trenutačni red zadataka držite u alatu za praćenje zadataka.
-
-</details>
-
----
+| ----- | ----------- | ----------------- | -------------------- |
 
 ## 2.6 Sljedivost zahtjeva
 
-**Cilj:** Osigurati dvosmjernu sljedivost — povezati zahtjeve s opisanim ponašanjem, dijelovima sustava koji ih ostvaruju te ispitivanjem ili drugom provjerom. 
+Tablica povezuje zahtjeve s planiranim modulima, arhitekturnim odgovornostima i provjerama. Oznake **ST** označavaju funkcijske provjere, a **Q** provjere kvalitete. Ovdje su navedeni njihov planirani sadržaj i obuhvat; rezultati izvršavanja vode se u poglavlju o ispitivanju. Postojeći UC-001 odnosi se na dogovor najma.
 
-| ID zahtjeva | Obrazac uporabe / modul | Arhitekturna realizacija | Ispitivanje ili provjera |
-| --- | --- | --- | --- |
-| F-001 | [UC-001] | [Komponenta, modul ili drugo mjesto realizacije] | [ST-01, CT-01 ili druga provjera] |
-|  |  |  |  |
+Oznake postojećih provjera **ST** i **Q** zadržane su. Provjere **ST-15** za usluge i **ST-18** za poslovni profil uklonjene su iz aktivne sljedivosti i njihove se oznake ne dodjeljuju drugim provjerama. Zbog toga numeracija ST ima praznine. Oznake ST-16 za naplatu i ST-17 za porezni postupak ostaju iste, iako su pripadajući zahtjevi sada F-018 i F-019.
 
-<details>
-<summary><strong>Sljedivost zahtjeva do obrazaca uporabe i ispitivanja</strong></summary>
-
-**Primjer — poveznice zahtjeva CrisisMapa:**
-
-| ID zahtjeva | Obrazac uporabe / ponašanje | Arhitekturna realizacija | Ispitivanje / provjera |
-| --- | --- | --- | --- |
-| F-004 | UC-002 Podnošenje prijave kriznog događaja | Web-klijent; API za prijave; usluga za prijave | ST-01 Valjano podnošenje prijave; ST-02 Nedostaje obavezna lokacija; ST-03 Dopuštenje geolokacije odbijeno |
-| F-005 | Odabir primatelja obavijesti | Proces za obavijesti | CT-06 Primatelji obavijesti; potpuna dostava obavijesti nije pokrivena ovom provjerom |
-
-**Pokrivenost i dokazi:** CT-06 provjerava odabir primatelja za F-005, ali sam po sebi ne dokazuje da je obavijest stvarno dostavljena; ako projekt zahtijeva potpunu dostavu od početka do kraja, za taj dio treba postojati zasebna provjera. Svaki redak pokazuje gdje je zahtjev opisan kao ponašanje, gdje je ostvaren u sustavu i gdje se nalazi dokaz njegove provjere. Zahtjev ne mora imati zaseban obrazac uporabe ako ne opisuje korisničku interakciju; tada navedite relevantno ponašanje, arhitekturni element ili drugi prikladan način realizacije. U svojem projektu koristite stvarne nazive komponenata, modula i provjera iz dokumentacije i implementacije. Nedostajuću poveznicu ostavite praznom ili označite kao *na čekanju* uz kratak razlog. Stvarni rezultati ispitivanja bilježe se uz ispitne slučajeve; ova tablica pokazuje gdje ih pronaći.
-
-</details>
-
----
+| ID zahtjeva         | Obrazac uporabe / modul         | Arhitekturna realizacija                                                               | Ispitivanje ili provjera                                                                                            |
+| ------------------- | ------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| F-001               | Registracija, prijava i odjava  | Adapter identiteta, korisnički račun i upravljanje sesijom; područje Pavla Kneza       | ST-01 — valjana, neuspješna i prekinuta prijava, ponovna prijava istim identitetom i odjava                         |
+| F-002               | Opcionalna alternativna prijava | Provjereno povezivanje načina prijave s računom; područje Pavla Kneza                  | ST-02 — prekid vanjske prijave, provjera identiteta, oporavak lozinke i odbijanje neovlaštenog povezivanja; uvjetno |
+| F-003               | Upravljanje oglasima            | Obrasci, API oglasa, baza i mediji; frontend, integracija i podatkovni sloj            | ST-03 — obvezna polja, vlasništvo, izmjena, arhiviranje i očuvanje dogovorenih podataka                             |
+| F-004, F-005        | Katalog i pretraga              | Upiti nad objavljenim oglasima i raspoloživosti, filtri i javni prikaz                 | ST-04 — pregled, kombinacije filtara, prazan rezultat i nedostupnost neobjavljenog oglasa                           |
+| F-006               | Moderacija oglasa               | Administratorski red za pregled, odluke i revizijski trag                              | ST-05 — odobrenje, zahtjev za izmjenu, uklanjanje i zabrana radnje bez ovlasti                                      |
+| F-007               | UC-001 Dogovoriti najam         | Izračun ponude i stvaranje zahtjeva                                                    | ST-06 — ispravan zahtjev, vlastiti oglas, nevaljan termin, promijenjena ponuda i ponovljeno slanje                  |
+| F-008, F-017        | UC-001 i raspoloživost          | Pravila statusa i transakcijsko zauzimanje termina; integracija i podatkovni sloj      | ST-07 — prihvaćanje, odbijanje, blokade i istodobni preklapajući zahtjevi                                           |
+| F-009               | Primopredaja i povrat           | Verzije dokaza, privatna pohrana fotografija i potvrde sudionika                       | ST-08 — oba zapisa stanja, osporavanje, završetak i zabrana prepisivanja izvornog dokaza                            |
+| F-010               | Recenzije                       | Veza recenzije sa završenim najmom, autorom, primateljem i ulogom                      | ST-09 — ocjena i tekst, zabrana duplikata, samorecenzije i recenzije bez dovršenog najma                            |
+| F-011               | Osobni i javni profil           | Razdvojeni privatni i javni podaci profila                                             | ST-10 — trajnost izmjene, javne recenzije i skrivanje privatnih podataka                                            |
+| F-012               | Razgovor o najmu                | Poruke vezane uz zahtjev ili najam i provjera pristupa                                 | ST-11 — razmjena, redoslijed, prazan unos i zabrana pristupa trećoj osobi                                           |
+| F-013, F-014        | Korisnička podrška              | Ticketi, povezani dokazi, odgovori, dopušteni prijelazi statusa i obrazložen ishod     | ST-12 — podnošenje, očitovanja, obrada i zatvaranje; dopuštene konačne radnje nakon OD-05                           |
+| F-015               | Lokacija                        | Adapter Google Mapsa i odvojena javna/privatna lokacija; područje Viktora Lazića       | ST-13 — unos adrese, odabir točke, otvaranje karte, odbijena geolokacija i razina preciznosti                       |
+| F-016               | AI provjera oglasa              | Adapter AI servisa i status provjere verzije sadržaja; područje Pavla Kneza            | ST-14 — prihvatljiv, neprikladan, neodlučan i nedostupan rezultat te ponovna provjera nakon izmjene                 |
+| F-018               | Naknada i naplata               | Verzija izračuna, evidencija plaćanja i eventualni platni adapter                      | ST-16 — ispravan izračun, odbijena naplata, povrat i ponovljeni događaj; nakon OD-02 i usklađenja s OD-04           |
+| F-019               | Porezni postupak                | Pravila obračuna, evidencija obveze i dokaz izvršenja; izvedba nakon stručne razrade   | ST-17 — obračun, uplata, neuspjeh i ispravak prema odobrenim očekivanim rezultatima; nakon OD-04                    |
+| F-020               | Gostujući pristup               | Javni prikazi i zahtjev za prijavu prije zaštićene radnje                              | ST-19 — pregled bez računa i odbijanje zaštićenih radnji; uvjetno                                                   |
+| F-021               | Chatbot za pomoć                | Odobreni sadržaj pomoći i adapter razgovornog servisa                                  | ST-20 — odgovor iz uputa, nepoznato pitanje, nedostupan servis i zabrana privatnih podataka; uvjetno                |
+| F-022               | Otkazivanje najma               | Pravila otkazivanja, oslobađanje termina i veza s povratom                             | ST-21 — povlačenje zahtjeva, otkazivanje potvrđenog dogovora i posljedice prema OD-02                               |
+| F-023               | Korisnički pregled              | Prikazi vlastitih oglasa, zahtjeva, najmova i ticketa                                  | ST-22 — obje uloge u najmu, filtri statusa, arhiva i odsutnost tuđih privatnih podataka                             |
+| F-024               | Obavijesti                      | Događaji i korisničke obavijesti povezane s poslovnim zapisom                          | ST-23 — odgovarajući primatelj, poveznica, oznaka pročitano i sprječavanje duplikata                                |
+| NF-01, NF-02, NF-07 | Sigurnost i privatnost          | Poslužiteljska autorizacija, sesije, pristup medijima i konfiguracija                  | Q-01 — matrica pristupa, izravni API pozivi, sesije, privatni podaci i tajne                                        |
+| NF-03               | Integritet podataka             | Transakcije, ograničenja baze i sigurna obrada ponovljenih radnji                      | ST-07 i ST-16 — konkurentnost i ponavljanje; Q-07 — prekid usred promjene i provjera konzistentnosti                |
+| NF-04, NF-05, NF-11 | Sučelje i pristupačnost         | Prilagodljiv frontend, semantički obrasci i englesko nazivlje; područje Adama Winklera | Q-02 — ciljane širine, tipkovnica, fokus, oznake i jezik                                                            |
+| NF-06               | Upload i mediji                 | Poslužiteljska validacija, ograničenja i obrada metapodataka                           | Q-03 — formati, veličina, kvote, nevaljan sadržaj i metapodaci                                                      |
+| NF-08               | Odziv kataloga                  | Upiti, straničenje i indeksi nad katalogom                                             | Q-04 — opisano mjerenje opterećenja i zapis rezultata                                                               |
+| NF-09               | Prekidi i vanjski servisi       | Obrada grešaka, vremenska ograničenja i ponovni pokušaji                               | Q-05 — simulirani prekidi i provjera stvarnog poslovnog ishoda                                                      |
+| NF-10               | Trajnost i obnova               | Baza, pohrana medija i sigurnosne kopije; područja Patrika Šinka i Mateja Miličevića   | Q-06 — ponovno pokretanje i obnova povezanih podataka                                                               |
+| NF-12               | Revizijski trag                 | Evidencija poslovnih događaja s ograničenim pristupom                                  | Q-08 — autor, vrijeme i promjena te neizmjenjivost kroz aplikaciju                                                  |
+| NF-13               | Održavanje i isporuka           | Ugovori modula, migracije, konfiguracija, upute i automatizirane provjere              | Q-09 — pokretanje iz čiste kopije i izvršavanje relevantnih provjera                                                |
+| NF-14               | Preglednici                     | Klijentski tijekovi bez ovisnosti o jednom pregledniku                                 | Q-10 — glavni tijekovi u navedenim preglednicima i zabilježenim inačicama                                           |
 
 ## 2.7 Pregled zahtjeva
 
-**Cilj:** Zabilježiti važne povratne informacije o zahtjevima i odluke koje iz njih proizlaze na dvije formalne kontrolne točke projekta, u 7. i 14. tjednu.
-
-| Kontrolna točka | Povratna informacija ili nalaz | Odluka o zahtjevu ili opsegu |
-| --- | --- | --- |
-| Iteracija 1 | [Povratna informacija] | [Odluka; vidi odjeljak 2.5] |
-| Demo 2  | [Povratna informacija] | [Odluka; vidi odjeljak 2.5] |
-| Završni pregled | [Povratna informacija] | [Odluka; vidi odjeljak 2.5] |
-
-<details>
-<summary><strong>Odluke o zahtjevima nakon pregleda</strong></summary>
-
-**Primjer scenarija — pregled zahtjeva CrisisMapa:**
-
-| Kontrolna točka | Povratna informacija ili nalaz | Odluka o zahtjevu ili opsegu |
-| --- | --- | --- |
-| Iteracija 1 | Demonstracija pokazuje da odbijanje pristupa lokaciji preglednika onemogućuje podnošenje prijave. | Dogovoriti ručni odabir lokacije; ažurirati F-004 i primjer NF-01 te razlog zabilježiti u odjeljku 2.5. |
-
-**Odluka povezana s povratnom informacijom:** Zapis povezuje opaženo ponašanje s konkretnom promjenom zahtjeva i izbjegava zapisnik cijelog sastanka. Zapišite samo stvarne povratne informacije i odluke za kontrolne točke. Konzultacije u nekom drugom tjednu ne stvaraju dodatnu obaveznu predaju.
-
-</details>
-
----
-
->**Završna provjera:** Zahtjevi su aktualni, provjerljivi i povezani. Svaki važan zahtjev moguće je pratiti od njegova opisa i ponašanja preko mjesta realizacije u sustavu do odgovarajućeg ispitivanja ili druge provjere. Poveznice koriste stvarne identifikatore i nazive iz projektne dokumentacije.
-
+| Kontrolna točka                                       | Povratna informacija ili nalaz                               | Odluka o zahtjevu ili opsegu |
+| ----------------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| Usklađivanje s izmijenjenim zahtjevima, 24. 10. 2026. | Novi popis sadrži 24 funkcijska i 14 nefunkcijskih zahtjeva. |
