@@ -29,8 +29,8 @@ Ciljana skupina korisnika uključuje pojedince koji žele smanjiti troškove pov
 
 | Skupina korisnika ili dionika | Potreba ili interes relevantan za ovaj projekt |
 | --- | --- |
-| Vlasnici predmeta | Dodatna pasivna zarada koristeći stvari koje rijetko treba |
-| Iznajmljivač | Jeftiniji pronalazak potrebnih predmeta od kupovine |
+| Iznajmljivač | Dodatna pasivna zarada koristeći stvari koje rijetko treba |
+| Najmoprimac | Jeftiniji pronalazak potrebnih predmeta od kupovine |
 | Regulatorno tijelo / Agencija za zaštitu podataka (Dionik) | Zahtijeva osiguravanje anonimnosti prijavitelja i zaštitu osobnih podataka (npr. usklađenost s GDPR-om). Ovaj dionik ne koristi aplikaciju, ali definira ograničenja sustava. |
 
 
