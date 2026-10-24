@@ -1,0 +1,33 @@
+
+@startuml
+left to right direction
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Korisnik" as User
+actor "Vanjski sustav\nza prijavu" as Auth
+
+rectangle "Web aplikacija za najam predmeta" {
+
+    usecase "Prijaviti se" as UC_Login
+    usecase "Pregledavati objave" as UC_Browse
+    usecase "Pregledati detalje\nobjave" as UC_Details
+    usecase "Izraditi objavu" as UC_Create
+    usecase "Dodati slike\nobjavi" as UC_Images
+    usecase "Pregledati vlastite\nobjave" as UC_MyPosts
+
+}
+
+User --> UC_Login
+User --> UC_Browse
+User --> UC_Details
+User --> UC_Create
+User --> UC_MyPosts
+
+Auth --> UC_Login
+
+UC_Create ..> UC_Images : <<include>>
+UC_Browse ..> UC_Details : <<include>>
+
+@enduml
