@@ -49,7 +49,6 @@ rectangle "Sustav TradeIt" {
 
 Visitor -- UC_Login
 User -- UC_Browse
-User -- UC_Details
 User -- UC_Create
 User -- UC_MyPosts
 
