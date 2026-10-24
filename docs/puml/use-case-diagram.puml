@@ -29,7 +29,7 @@ Admin -|> User
 
 
 ' Vanjski aktori
-actor Auth as "Vanjski sustav\nza prijavu" <<external system>>
+actor Auth as "Pružatelj identiteta\n(OAuth)" <<external system>>
 
 rectangle "Sustav TradeIt" {
 
@@ -40,13 +40,14 @@ rectangle "Sustav TradeIt" {
     (UC-02\nPregled oglasa) as UC_Browse
     (UC-03\nFiltriranje prikaza objava) as UC_Filter
     (UC-04\nIzraditi objavu) as UC_Create
-    (UC-05\nDodavanje fotografije) as UC_UploadPhoto
-    (UC-06\nPregledati vlastite\nobjave) as UC_MyPosts
+    (UC-05\nProvjera podataka objave) as UC_ValidatePost
+    (UC-06\nDodavanje fotografije) as UC_UploadPhoto
+    (UC-07\nPregledati vlastite\nobjave) as UC_MyPosts
     
 
 }
 
-User -- UC_Login
+Visitor -- UC_Login
 User -- UC_Browse
 User -- UC_Details
 User -- UC_Create
@@ -54,7 +55,8 @@ User -- UC_MyPosts
 
 Auth -- UC_Login
 
-UC_Create ..> UC_Images : <<include>>
-UC_Browse ..> UC_Details : <<include>>
+UC_Create ..> UC_UploadPhoto : <<include>>
+UC_Create ..> UC_ValidatePost : <<include>>
+UC_Browse ..> UC_Filter : <<extend>>
 
 @enduml
