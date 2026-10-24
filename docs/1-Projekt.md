@@ -87,6 +87,8 @@ Ovaj pregled zadržite na razini opsega: navedite glavnu mogućnost i njezinu gr
 
 [U dvije do četiri rečenice opišite jedan postojeći postupak ili relevantno rješenje, što ono već omogućuje i koja konkretna potreba motivira ovaj projekt. Činjenične tvrdnje o vanjskim proizvodima ili praksama potkrijepite izvorom.]
 
+Potencijalni korisnici trenutno kupuju predmete zbog potrebe korištenja jednom. Nakon toga im taj predmet stoji nekorišten. S našom web-aplikacijom ljudi bi imali opciju iznajmiti predmet koji znaju da će im trebati samo jednom ili nekoliko puta, bez potrebe da ga kupe po punoj cijeni.
+
 <details>
 <summary><strong>Postojeći pristupi i opravdanost projekta</strong></summary>
 
