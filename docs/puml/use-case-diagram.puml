@@ -1,31 +1,58 @@
 
 @startuml
+title Sustav TradeIt - slučajevi uporabe
 left to right direction
 
 skinparam packageStyle rectangle
 skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam ArrowColor #212529
 
-actor "Korisnik" as User
-actor "Vanjski sustav\nza prijavu" as Auth
+skinparam actor {
+    BackgroundColor #F8F9FA
+    BorderColor #212529
+    BackgroundColor<<external system>> #FFF3CD
+    BorderColor<<external system>> #856404
+}
 
-rectangle "Web aplikacija za najam predmeta" {
+skinparam usecase {
+    BackgroundColor #E7F1FF
+    BorderColor #0D6EFD
+}
+' Glavni aktori
+actor Visitor as "Posjetitelj"
+actor User as "Korisnik"
+actor Admin as "Admin"
 
-    usecase "Prijaviti se" as UC_Login
-    usecase "Pregledavati objave" as UC_Browse
-    usecase "Pregledati detalje\nobjave" as UC_Details
-    usecase "Izraditi objavu" as UC_Create
-    usecase "Dodati slike\nobjavi" as UC_Images
-    usecase "Pregledati vlastite\nobjave" as UC_MyPosts
+User -|> Visitor
+Admin -|> User
+
+
+' Vanjski aktori
+actor Auth as "Vanjski sustav\nza prijavu" <<external system>>
+
+rectangle "Sustav TradeIt" {
+
+     ' Pristup
+    (UC-01\nPrijava u sustav) as UC_Login
+
+    ' Prijave i karta
+    (UC-02\nPregled oglasa) as UC_Browse
+    (UC-03\nFiltriranje prikaza objava) as UC_Filter
+    (UC-04\nIzraditi objavu) as UC_Create
+    (UC-05\nDodavanje fotografije) as UC_UploadPhoto
+    (UC-06\nPregledati vlastite\nobjave) as UC_MyPosts
+    
 
 }
 
-User --> UC_Login
-User --> UC_Browse
-User --> UC_Details
-User --> UC_Create
-User --> UC_MyPosts
+User -- UC_Login
+User -- UC_Browse
+User -- UC_Details
+User -- UC_Create
+User -- UC_MyPosts
 
-Auth --> UC_Login
+Auth -- UC_Login
 
 UC_Create ..> UC_Images : <<include>>
 UC_Browse ..> UC_Details : <<include>>
